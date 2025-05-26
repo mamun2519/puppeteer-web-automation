@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 
 const run = async () => {
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: false, devtools: true });
     const page = await browser.newPage();
     await page.goto("https://yahoo.com");
 
