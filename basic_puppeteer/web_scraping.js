@@ -11,6 +11,15 @@ const run = async () => {
 
     console.log("Page Title:", title);
     // get the headings on the page
+    const headings = await page.$eval("h1", (element) => element.textContent);
+    console.log("Heading:", headings);
+
+    await page.screenshot({ path: "youtube.png" });
+
+    // take the pdf of the page
+    await page.pdf({ path: "youtube.pdf", format: "A4" });
+
+    await browser.close();
   } catch (error) {
     console.log(error);
   }
