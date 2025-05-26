@@ -4,7 +4,7 @@ const run = async () => {
   try {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto("https://youtube.com");
+    await page.goto("https://yahoo.com");
 
     // get a page title
     const title = await page.title();
@@ -14,10 +14,10 @@ const run = async () => {
     const headings = await page.$eval("h1", (element) => element.textContent);
     console.log("Heading:", headings);
 
-    await page.screenshot({ path: "youtube.png" });
+    await page.screenshot({ path: "yahoo.png" });
 
     // take the pdf of the page
-    await page.pdf({ path: "youtube.pdf", format: "A4" });
+    await page.pdf({ path: "yahoo.pdf", format: "A4" });
 
     await browser.close();
   } catch (error) {
