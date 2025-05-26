@@ -38,6 +38,7 @@ const run = async () => {
     2
   );
   console.log(outPut);
+  await browser.close();
 };
 
 await run();
