@@ -14,6 +14,30 @@ const run = async () => {
       alt: img.alt;
     })
   );
+
+  // extract the page links
+  const links = await page.$$eval("a", (anchors) =>
+    anchors.map((anchor) => ({
+      href: anchor.href,
+      text: anchor.textContent.trim(),
+    }))
+  );
+
+  const imageCount = image.length;
+  const linkCount = links.length;
+
+  // output the results
+  const outPut = JSON.stringify(
+    {
+      imageCount,
+      linkCount,
+      images: image,
+      links: links,
+    },
+    null,
+    2
+  );
+  console.log(outPut);
 };
 
 await run();
