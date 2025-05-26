@@ -1,9 +1,9 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 
 const puppeteerServer = async () => {
   try {
     // launce a headless browser
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: false });
 
     // create a new page
     const page = await browser.newPage();
