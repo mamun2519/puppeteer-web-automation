@@ -17,4 +17,7 @@ const httpInterceptors = async (URL) => {
     }
   });
   await page.goto(URL);
+  await browser.close();
 };
+
+httpInterceptors("https://yahoo.com");
