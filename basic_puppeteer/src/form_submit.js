@@ -14,3 +14,5 @@ const enterFormData = async (URL, searchQuery) => {
   await page.screenshot({ page: "search_result.png" }); // Take a screenshot of the search results page
   await browser.close();
 };
+
+enterFormData("https://google.com", "Puppeteer form submission example");
