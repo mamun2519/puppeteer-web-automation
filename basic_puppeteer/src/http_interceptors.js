@@ -11,9 +11,11 @@ const httpInterceptors = async (URL) => {
     if (request.url().includes(".png")) {
       // Abort requests for PNG images
       request.abort();
+      console.log("Aborted request for:", request.url());
     } else {
       request.headers({ secretKey: "12345" });
       request.continue();
+      console.log("Continuing request for:", request.url());
     }
   });
   await page.goto(URL);
