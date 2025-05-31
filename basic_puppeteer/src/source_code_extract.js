@@ -12,4 +12,9 @@ const getSourceCode = async (url) => {
 
   // save the source code to a file
   fs.writeFileSync("source_code.html", sourceCode, "utf8");
+
+  await browser.close();
+  console.log("Source code saved to source_code.html");
 };
+
+getSourceCode("https://yahoo.com");
