@@ -11,7 +11,7 @@ const enterFormData = async (URL, searchQuery) => {
   await page.keyboard.press("Enter"); // Press Enter to submit the form
   await page.waitForNavigation({ waitUntil: "networkidle2" }); // Wait for the navigation to complete
 
-  await page.screenshot({ page: "search_result.png" }); // Take a screenshot of the search results page
+  await page.screenshot({ path: "search_result.png" }); // Take a screenshot of the search results page
   await browser.close();
 };
 
