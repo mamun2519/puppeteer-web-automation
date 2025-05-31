@@ -8,4 +8,8 @@ const getSourceCode = async (url) => {
   await page.goto(url);
 
   // get the page source code
+  const sourceCode = await page.content();
+
+  // save the source code to a file
+  fs.writeFileSync("source_code.html", sourceCode, "utf8");
 };
