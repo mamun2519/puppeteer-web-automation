@@ -15,4 +15,4 @@ const enterFormData = async (URL, searchQuery) => {
   await browser.close();
 };
 
-enterFormData("https://google.com", "Puppeteer form submission example");
+enterFormData("https://google.com", "sunrise");
