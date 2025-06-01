@@ -12,6 +12,19 @@ const highLightLinks = async (URL) => {
   );
   console.log("Links found on the page:", links);
 
+  // broken links
+  const brokenLinks = [];
+  for (const link of links) {
+    try {
+      const response = await page.goto(link, { waitUntil: "networkidle2" });
+      if (!response || !response.ok()) {
+        brokenLinks.push(link);
+      }
+    } catch (error) {
+      console.error(`Error accessing ${link}:`, error);
+      brokenLinks.push(link);
+    }
+  }
   await browser.close();
 };
 
