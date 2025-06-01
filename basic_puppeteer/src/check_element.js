@@ -10,13 +10,6 @@ const checkElementPresent = async (URL, elements) => {
   const presentElement = [];
 
   for (const element of elements) {
-    const isPresent = await page.evaluate((el) => {
-      return document.querySelector(el) !== null;
-    }, element);
-
-    if (isPresent) {
-      presentElement.push(element);
-    }
   }
   await browser.close();
 };
