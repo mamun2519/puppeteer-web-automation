@@ -23,3 +23,8 @@ const codeCoverage = async (URL) => {
 
   await browser.close();
 };
+
+// Example usage
+codeCoverage("https://google.com")
+  .then(() => console.log("Code coverage completed"))
+  .catch((error) => console.error("Error during code coverage:", error));
