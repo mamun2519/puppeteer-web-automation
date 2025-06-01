@@ -8,4 +8,7 @@ const codeCoverage = async (URL) => {
     page.coverage.startJSCoverage(),
     page.coverage.startCSSCoverage(),
   ]);
+
+  // Navigate to the URL
+  await page.goto(URL);
 };
