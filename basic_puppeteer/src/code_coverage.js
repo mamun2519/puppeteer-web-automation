@@ -11,4 +11,10 @@ const codeCoverage = async (URL) => {
 
   // Navigate to the URL
   await page.goto(URL);
+
+  // Stop code coverage
+  const [jsCoverage, cssCoverage] = await Promise.all([
+    page.coverage.stopJSCoverage(),
+    page.coverage.stopCSSCoverage(),
+  ]);
 };
