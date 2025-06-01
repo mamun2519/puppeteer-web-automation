@@ -1,12 +1,23 @@
 import puppeteer from "puppeteer";
 
 // check element on the web page
-const checkElementPresent = async (URL) => {
+const checkElementPresent = async (URL, elements) => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
   await page.goto(URL);
 
+  const presentElement = [];
+
+  for (const element of elements) {
+    const isPresent = await page.evaluate((el) => {
+      return document.querySelector(el) !== null;
+    }, element);
+
+    if (isPresent) {
+      presentElement.push(element);
+    }
+  }
   await browser.close();
 };
 
