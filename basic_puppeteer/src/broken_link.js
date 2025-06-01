@@ -25,6 +25,7 @@ const highLightLinks = async (URL) => {
       brokenLinks.push(link);
     }
   }
+  console.log("Broken links found:", brokenLinks);
   await browser.close();
 };
 
