@@ -16,6 +16,8 @@ const highLightLinks = async (URL) => {
       link.style.color = "red"; // Change link text color to red
     });
   });
+
+  await page.screenshot({ path: "after_highlight.png" });
   await browser.close();
 };
 
