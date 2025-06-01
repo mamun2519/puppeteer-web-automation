@@ -17,4 +17,7 @@ const codeCoverage = async (URL) => {
     page.coverage.stopJSCoverage(),
     page.coverage.stopCSSCoverage(),
   ]);
+  // log the coverage data
+  console.log("JavaScript Coverage:", jsCoverage);
+  console.log("CSS Coverage:", cssCoverage);
 };
