@@ -20,4 +20,6 @@ const codeCoverage = async (URL) => {
   // log the coverage data
   console.log("JavaScript Coverage:", jsCoverage);
   console.log("CSS Coverage:", cssCoverage);
+
+  await browser.close();
 };
