@@ -10,7 +10,10 @@ const checkElementPresent = async (URL, elements) => {
   const presentElement = [];
 
   for (const element of elements) {
+    const isPresent = await page.$$(element);
+    presentElement[element] = isPresent.length > 0;
   }
+  console.log("Elements present on the page:", presentElement);
   await browser.close();
 };
 
